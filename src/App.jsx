@@ -76,7 +76,6 @@ const App = () => {
   const [filtered, setFiltered] = useState("");
   const setFilter = (value) => {
     setFiltered(value);
-    console.log("Set filter = ", filtered);
   };
   const todoFilter =
     filtered === "Done" || filtered === "Doing"

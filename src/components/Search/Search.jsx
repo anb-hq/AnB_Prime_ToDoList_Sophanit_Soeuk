@@ -2,7 +2,6 @@ import "./Search.css";
 export const Search = ({ setFilter }) => {
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     setFilter(e.target.value);
   };
   const search = (e) => {
