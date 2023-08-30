@@ -28,15 +28,15 @@ const Todo = ({
 
   return (
     <section id="todo-section" className="todo wrapper-todo">
-      <div className="date flex">
+      <section className="date flex">
         <Title
           isBig={true}
           title={today.getDate() + " " + month(today.getMonth())}
         />
         <Title isBig={false} title={day(today.getDay())} />
-      </div>{" "}
+      </section>{" "}
       <Search setFilter={setFilter} />
-      <div className="flex gap margin-y">
+      <main className="flex gap margin-y">
         {btnTitle.map((item, index) => (
           <Button
             key={item}
@@ -47,7 +47,7 @@ const Todo = ({
             onFilter={() => onFilter(item)}
           />
         ))}
-      </div>
+      </main>
       <List
         todo={todo}
         onDelete={onDelete}

@@ -9,9 +9,9 @@ const FormEdit = ({ title, onSubEdit, id, closePop }) => {
     editText.current.value = "";
   };
   return (
-    <div className="form-edit">
+    <section className="form-edit">
       <form onSubmit={handleEdit} className="form-edit-pop">
-        <div className="form gap">
+        <main className="form gap">
           <input
             type="text"
             ref={editText}
@@ -19,17 +19,17 @@ const FormEdit = ({ title, onSubEdit, id, closePop }) => {
             autoFocus
             className="btn border normal-title color-black"
           />
-          <div className="flex gap">
+          <section className="flex gap">
             <button type="submit" className="btn btn-primary normal-title">
               Edit
             </button>
             <button onClick={closePop} className="btn border normal-title">
               Cancel
             </button>
-          </div>
-        </div>
+          </section>
+        </main>
       </form>
-    </div>
+    </section>
   );
 };
 
