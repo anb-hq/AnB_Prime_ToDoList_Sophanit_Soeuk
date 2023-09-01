@@ -74,10 +74,17 @@ const App = () => {
 
   // filter state
   const [filtered, setFiltered] = useState("");
-
-  const todoFilter = filtered
-    ? todo.filter((li) => li.isDone == filtered)
-    : todo;
+  const setFilter = (value) => {
+    setFiltered(value);
+  };
+  const todoFilter =
+    filtered === "Done" || filtered === "Doing"
+      ? todo.filter((li) => li.isDone == filtered)
+      : filtered !== "Done" || filtered !== "Doing"
+      ? todo.filter((li) =>
+          li.title.toLowerCase().includes(filtered.toLowerCase())
+        )
+      : todo;
 
   // state management
   const btnTitle = ["All Todo", "Doing", "Done"];
@@ -87,7 +94,7 @@ const App = () => {
   const [isPop, setPop] = useState(false);
 
   return (
-    <section className="app">
+    <main className="app">
       <Todo
         btnActive={btnActive}
         btnTitle={btnTitle}
@@ -104,8 +111,9 @@ const App = () => {
         onSubEdit={onSubEdit}
         isPop={isPop}
         setPop={() => setPop(!isPop)}
+        setFilter={setFilter}
       />
-    </section>
+    </main>
   );
 };
 

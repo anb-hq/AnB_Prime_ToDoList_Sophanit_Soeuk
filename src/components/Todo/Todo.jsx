@@ -2,6 +2,7 @@ import { day, month } from "../../js/date";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import List from "../List/List";
+import { Search } from "../Search/Search";
 import Title from "../Title/Title";
 import "./Todo.css";
 
@@ -21,19 +22,21 @@ const Todo = ({
   onSubEdit,
   isPop,
   setPop,
+  setFilter,
 }) => {
   const today = new Date();
 
   return (
     <section id="todo-section" className="todo wrapper-todo">
-      <div className="date flex">
+      <section className="date flex">
         <Title
           isBig={true}
           title={today.getDate() + " " + month(today.getMonth())}
         />
         <Title isBig={false} title={day(today.getDay())} />
-      </div>
-      <div className="flex gap margin-y">
+      </section>{" "}
+      <Search setFilter={setFilter} />
+      <main className="flex gap margin-y">
         {btnTitle.map((item, index) => (
           <Button
             key={item}
@@ -44,7 +47,7 @@ const Todo = ({
             onFilter={() => onFilter(item)}
           />
         ))}
-      </div>
+      </main>
       <List
         todo={todo}
         onDelete={onDelete}

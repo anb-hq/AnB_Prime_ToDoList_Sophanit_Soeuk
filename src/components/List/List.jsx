@@ -34,7 +34,7 @@ const List = ({
           }
         >
           <p className="normal-title white-color">{item.title}</p>
-          <div className="wrap-icon flex gap center-x-y">
+          <section className="wrap-icon flex gap center-x-y">
             <i
               onClick={() => {
                 setPop(!isPop);
@@ -58,7 +58,7 @@ const List = ({
               onClick={() => onDelete(item.id)}
               className="fa-solid fa-delete-left "
             ></i>
-          </div>
+          </section>
           {isPop && (
             <FormEdit
               title={popTitle}
