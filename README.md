@@ -1,5 +1,7 @@
 # Todo List Project Convention Guide
 
+#### `About this Todo List Project I did it all by myself !!! except for "localStorage" I asked my teammate @MoonLight.`
+
 ## Table of Contents
 
 - [Overview](#overview)
